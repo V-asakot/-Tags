@@ -15,30 +15,31 @@ async function loadItems(_tags){
        });
        if(f==true) {toShow.push(item);}
       });
+    
     }
     );
     return toShow;
 }
 
 async function addImageItem(name,url,tags){
-  let size;
-  db.collection('items').get().then(items => {
+  let size,id;
+  await db.collection('items').get().then(items => {
     size = items.length;
-    let id = items[size-1].id + 1;
-    if(name=='') name = "img_"+id;
-    db.collection('items').add({
-      id: id,
-      name: name,
-      type: 'img',
-      url: url,
-      tags: tags
-     });  
-  })
+    id = items[size-1].id + 1;
+  });
+  if(name=='') name = "img_"+id;
+  await db.collection('items').add({
+    id: id,
+    name: name,
+    type: 'img',
+    url: url,
+    tags: tags
+   });  
    
 }
 
 async function removeItem(id){
-  db.collection('items').doc({ id: id }).delete();
+  await  db.collection('items').doc({ id: id }).delete();
 }
 
 

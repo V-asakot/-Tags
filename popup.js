@@ -30,7 +30,7 @@
         name_input.classList.add('submiting_elem');
         submiting_button.classList.add('submiting_elem');
 
-        submiting_button.onclick = function() {
+        submiting_button.onclick = async function() {
             let tag = mainInput.value;
             if(tag.length>0){
             addTag(tag);
@@ -41,7 +41,7 @@
                 tagsList.push(t.text);
             });
             var url = getURLVar();
-            addImageItem(name_input.value,url,tagsList);
+            await addImageItem(name_input.value,url,tagsList);
             window.close();
         };
 
