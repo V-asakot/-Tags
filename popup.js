@@ -41,8 +41,12 @@
                 tagsList.push(t.text);
             });
             var url = getURLVar();
-            await addImageItem(name_input.value,url,tagsList);
-            window.close();
+            if(tags.length>0){
+              await addImageItem(name_input.value,url,tagsList);
+              window.close();
+            }else{
+              alert("Add at least one tag before saving image");
+            }
         };
 
         
