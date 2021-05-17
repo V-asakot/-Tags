@@ -21,7 +21,7 @@
     tags_div.appendChild(hiddenInput);
     }
 
-    function imagesPopupSetup(){
+    async function imagesPopupSetup(){
         let submiting_div = document.getElementsByClassName('submiting')[0];
         let name_input = document.createElement('input'),
         submiting_button = document.createElement('button');
@@ -42,7 +42,7 @@
             });
             var url = getURLVar();
             addImageItem(name_input.value,url,tagsList);
-            setTimeout(function(){window.close();}, 2000);
+            window.close();
         };
 
         
