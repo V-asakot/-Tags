@@ -27,6 +27,9 @@
         submiting_button = document.createElement('button');
         submiting_button.textContent =  "Add Image";
 
+        name_input.classList.add('submiting_elem');
+        submiting_button.classList.add('submiting_elem');
+
         submiting_button.onclick = function() {
             let tag = mainInput.value;
             if(tag.length>0){

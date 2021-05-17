@@ -102,7 +102,10 @@
     left:25px;
 }
 
-.submiting{
+.submiting {
     padding: 10px 10px;
+}
 
+.submiting .submiting_elem{
+   margin-right: 5px;
 }
