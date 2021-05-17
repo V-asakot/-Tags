@@ -25,6 +25,7 @@ async function addImageItem(name,url,tags){
   db.collection('items').get().then(items => {
     size = items.length;
     let id = items[size-1].id + 1;
+    if(name=='') name = "img_"+id;
     db.collection('items').add({
       id: id,
       name: name,
