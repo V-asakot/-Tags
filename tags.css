@@ -124,11 +124,10 @@
 }
 
 .submiting {
-    padding: 10px 10px;
+    padding: 5px 10px;
 }
 
 .submiting .submiting_elem{
-   margin-right: 5px;
-   margin-bottom: 5px;
+   margin-top: 5px;
 }
 
