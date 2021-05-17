@@ -20,14 +20,25 @@ async function loadItems(_tags){
     return toShow;
 }
 
-async function addImageItem(_name,_url,_tags){
-   db.collection('items').add({
-    name: _name,
-    type: 'img',
-    url: _url,
-    tags: _tags
-   });  
+async function addImageItem(name,url,tags){
+  let size;
+  db.collection('items').get().then(items => {
+    size = items.length;
+    db.collection('items').add({
+      id: size,
+      name: name,
+      type: 'img',
+      url: url,
+      tags: tags
+     });  
+  })
+   
 }
+
+async function removeItem(id){
+  db.collection('items').doc({ id: id }).delete();
+}
+
 
 
 /*

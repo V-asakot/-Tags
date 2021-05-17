@@ -6,9 +6,9 @@
     tags = [];
     let imagesContainer = document.getElementsByClassName('images')[0];
     let tagsContext = "Main";
-    popup_setup();
+    popupSetup();
 
-    function popup_setup() { 
+    function popupSetup() { 
     hiddenInput.setAttribute('type', 'hidden');
     hiddenInput.setAttribute('name', tags_div.getAttribute('data-name'));
 
@@ -21,7 +21,7 @@
     tags_div.appendChild(hiddenInput);
     }
 
-    function images_popup_setup(){
+    function imagesPopupSetup(){
         let submiting_div = document.getElementsByClassName('submiting')[0];
         let name_input = document.createElement('input'),
         submiting_button = document.createElement('button');
@@ -42,7 +42,7 @@
             });
             var url = getURLVar();
             addImageItem(name_input.value,url,tagsList);
-            setTimeout(function(){window.close();}, 3000);
+            setTimeout(function(){window.close();}, 2000);
         };
 
         
@@ -88,7 +88,7 @@
         document.getElementsByClassName('main-input')[0].focus();
     };
     
-    function set_popup_context(context){
+    function setPopupContext(context){
       tagsContext = context;
     }
 
