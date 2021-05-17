@@ -20,7 +20,6 @@ async function displayItems(){
 
 		   copy.addEventListener('click',async function () {
                      await navigator.clipboard.writeText(item.url);  
-                     cursor_focus();
        });
 		   
       let save = document.createElement("img");
@@ -33,7 +32,6 @@ async function displayItems(){
                      link.setAttribute('href',item.url);
                      link.setAttribute('download','download');
                      link.click();
-                     cursor_focus();
       });
         
       let del= document.createElement("img");
@@ -51,9 +49,15 @@ async function displayItems(){
         cursor_focus();
       });
 
+      let back = document.createElement("div");
+      back.classList.add('images_button');
+      back.setAttribute("id", "img_back");  
+
+      image_div.appendChild(back);
 		  image_div.appendChild(copy);
       image_div.appendChild(save);
       image_div.appendChild(del);
+      
 		  imagesContainer.appendChild(image_div);
       
       });
