@@ -18,6 +18,7 @@ async function loadItems(_tags){
     
     }
     );
+    toShow.reverse();
     return toShow;
 }
 

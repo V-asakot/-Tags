@@ -2,7 +2,19 @@
 let items = [];
 
 async function displayItems(){
-	        let toShow = await loadItems(tags);
+	  let toShow = await loadItems(tags);
+    let label = document.createElement("p");
+    let size = toShow.length;
+
+    imagesContainer.appendChild(label);
+    if(size == 0){
+      label.innerHTML = "No elements found";
+    }else{
+      label.innerHTML = size + " elements found";
+    }
+    label.classList.add("size-label");
+    label.setAttribute("align", "center");
+    
 		toShow.forEach(function(item, i, toShow) {
       
 		   let image_div = document.createElement("div");

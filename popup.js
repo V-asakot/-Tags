@@ -3,6 +3,8 @@
     let tags_div = document.getElementsByClassName('tags-input')[0];
 	let hiddenInput = document.createElement('input'),
     mainInput = document.createElement('input'),
+   /* filterBtn = document.createElement('button')
+    ,*/
     tags = [];
     let imagesContainer = document.getElementsByClassName('images')[0];
     let tagsContext = "Main";
@@ -15,10 +17,14 @@
     mainInput.setAttribute('type', 'text');
     mainInput.classList.add('main-input');
     
+   /* filterBtn.classList.add('filter-btn');*/
+
+    
     window.onload = cursor_focus;
 
     tags_div.appendChild(mainInput);
     tags_div.appendChild(hiddenInput);
+  /*  tags_div.appendChild(filterBtn);*/
     }
 
     async function imagesPopupSetup(){
